@@ -1,16 +1,16 @@
-import Task from "./components/Task/Task";
 
-const dataTask = {
-  id: 1,
-  text: "Learing prop-types",
-  days: 4,
-  isDone: false,
-};
+import Comment from './components/Comment/Comment';
 
+const dataComent= {
+    id:1,
+    content:"cool!",
+    amountLike:35,
+    isNew: true
+}
 function App() {
   return (
     <>
-      <Task dataTask={dataTask} />
+      <Comment dataComent={dataComent}/>
     </>
   );
 }
