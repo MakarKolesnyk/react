@@ -1,15 +1,29 @@
 import { useState } from "react";
+import Icon from "@mdi/react";
+import { mdiArrowDownBold, mdiArrowUpBold } from "@mdi/js";
+import { getRandomColor } from "../../utils";
 
 const ToggleText = (props) => {
+  const [color, setColor] = useState("#aaaaaa");
   const [close, setClose] = useState(true);
   const { title } = props;
   const changeClose = () => {
     setClose(!close);
   };
+  const changeColor = () => {
+    setColor(getRandomColor());
+  };
   return (
-    <div>
+    <div onClick={changeColor} style={{ backgroundColor: color }}>
       <h2>
-        {title} <button onClick={changeClose}>{close ? "hide" : "open"}</button>
+        {title}
+        <span onClick={changeClose}>
+          {close ? (
+            <Icon path={mdiArrowUpBold} size={1} />
+          ) : (
+            <Icon path={mdiArrowDownBold} size={1} />
+          )}
+        </span>
       </h2>
       {close && (
         <p>
