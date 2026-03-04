@@ -5,7 +5,7 @@ import { getRandomColor } from "../../utils";
 
 const ToggleText = (props) => {
   const [color, setColor] = useState("#aaaaaa");
-  const [close, setClose] = useState(true);
+  const [close, setClose] = useState(false);
   const { title } = props;
   const changeClose = () => {
     setClose(!close);

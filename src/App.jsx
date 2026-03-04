@@ -1,9 +1,11 @@
-import ToggleText from './components/ToggleText/ToggleText';
+import Task from "./components/Task/Task";
+
 
 function App() {
   return (
     <>
-     <ToggleText title="title"/>
+     <Task text="text for first task" days={5} isDone/>
+     <Task text="text for second task" days={2}/>
     </>
   );
 }
