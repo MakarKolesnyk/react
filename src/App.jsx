@@ -1,13 +1,12 @@
-import InputText from "./components/InputText/InputText";
-import InputCheckBox from './components/InputCheckBox/InputCheckBox';
-
+import interestsList, { sweets } from "./components/GroupCheckBoxs/data";
+import GroupCheckBoxes from "./components/GroupCheckBoxs/GroupCheckBoxes";
 
 function App() {
   return (
     <>
-    <InputText/>
-    <hr />
-    <InputCheckBox/>
+      <GroupCheckBoxes list={interestsList} />
+      <hr />
+      <GroupCheckBoxes list={sweets} />
     </>
   );
 }
