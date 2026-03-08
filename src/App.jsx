@@ -1,12 +1,12 @@
-import interestsList, { sweets } from "./components/GroupCheckBoxs/data";
-import GroupCheckBoxes from "./components/GroupCheckBoxs/GroupCheckBoxes";
+import transportation, {drinks} from './components/RadioMap/data'
+import RadioMap from './components/RadioMap/RadioMap';
 
 function App() {
   return (
     <>
-      <GroupCheckBoxes list={interestsList} />
-      <hr />
-      <GroupCheckBoxes list={sweets} />
+    <RadioMap list={transportation} name='transports'/>
+    <hr />
+    <RadioMap list={drinks} name='drinks'/>
     </>
   );
 }
