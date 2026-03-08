@@ -1,12 +1,11 @@
-import transportation, {drinks} from './components/RadioMap/data'
-import RadioMap from './components/RadioMap/RadioMap';
+import Select from "./components/Select/Select";
+import countries from './components/Select/data';
+
 
 function App() {
   return (
     <>
-    <RadioMap list={transportation} name='transports'/>
-    <hr />
-    <RadioMap list={drinks} name='drinks'/>
+    <Select list={countries}/>
     </>
   );
 }
