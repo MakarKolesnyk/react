@@ -1,0 +1,46 @@
+$width: 25%;
+$min-width: 500px;
+$colorBG: hsl(174, 100%, 88%);
+$border-width: 2px;
+$gap: 10px;
+
+.task {
+  width: $width * 2;
+  min-width: $min-width;
+  display: flex;
+  border: $border-width solid black;
+  padding: 0 $gap;
+  margin: $gap;
+  justify-content: center;
+  background-color: $colorBG;
+  &:hover {
+    // background-color: darken($color: $colorBG, $amount: 20%);
+    // background-color: lighten($color: $colorBG, $amount: 20%);
+    background-color: transparentize($color: $colorBG, $amount: 0.3);
+    // background-color: invert($color: $colorBG);
+    // color: $colorBG;
+    // background-color: mix($color1: red, $color2: yellow, $weight: 50);
+    // background-color: grayscale($color: red)
+  }
+  p {
+    margin-right: auto;
+    font: {
+      size: 1.5em;
+      family: serif;
+      weight: 600;
+    }
+    text: {
+        shadow: 2px 2px 5px black;
+        decoration: {
+            line: underline;
+            style: wavy;
+        }
+    }
+  }
+  button {
+    margin-left: $gap;
+    &:hover {
+      background-color: $colorBG;
+    }
+  }
+}

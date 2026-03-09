@@ -1,11 +1,12 @@
-import Select from "./components/Select/Select";
-import countries from './components/Select/data';
+import Task from "./components/Task/Task";
+import TasksList from "./components/TasksList/TasksList";
+
 
 
 function App() {
   return (
     <>
-    <Select list={countries}/>
+    <TasksList/>
     </>
   );
 }
