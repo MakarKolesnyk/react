@@ -1,0 +1,32 @@
+@use '/src/common/styles/colors' as *;
+@use '/src/common/styles/inherits' as *;
+
+.timer {
+  background-color: $colorBG;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+
+  h2 {
+    margin-bottom: 15px;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  button {
+    @extend %btn;
+
+    &:hover {
+      @extend %hover;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}

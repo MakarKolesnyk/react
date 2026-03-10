@@ -3,3 +3,14 @@
 %hover {
   background-color: transparentize($color: $colorBG, $amount: 0.3);
 }
+
+%btn{
+  background-color: $colorBgSecondary;
+  color: $colorTextSecondary;
+  border: none;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
