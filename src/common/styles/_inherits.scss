@@ -1,0 +1,5 @@
+@use "/src/common/styles/colors" as *;
+
+%hover {
+  background-color: transparentize($color: $colorBG, $amount: 0.3);
+}

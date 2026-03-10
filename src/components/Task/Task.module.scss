@@ -1,8 +1,13 @@
-$width: 25%;
-$min-width: 500px;
-$colorBG: hsl(174, 100%, 88%);
-$border-width: 2px;
+@use "/src/common/styles/colors" as *;
+@use "/src/common/styles/widths" as *;
+@use "/src/common/styles/mixin" as *;
+@use "/src/common/styles/inherits" as *;
+
 $gap: 10px;
+
+.hover {
+  background-color: transparentize($color: $colorBG, $amount: 0.3);
+}
 
 .task {
   width: $width * 2;
@@ -13,34 +18,27 @@ $gap: 10px;
   margin: $gap;
   justify-content: center;
   background-color: $colorBG;
+  @include border-radius(8px);
   &:hover {
-    // background-color: darken($color: $colorBG, $amount: 20%);
-    // background-color: lighten($color: $colorBG, $amount: 20%);
-    background-color: transparentize($color: $colorBG, $amount: 0.3);
-    // background-color: invert($color: $colorBG);
-    // color: $colorBG;
-    // background-color: mix($color1: red, $color2: yellow, $weight: 50);
-    // background-color: grayscale($color: red)
+    @extend %hover;
   }
   p {
     margin-right: auto;
-    font: {
-      size: 1.5em;
-      family: serif;
-      weight: 600;
-    }
+    @include font(26px, serif, 600);
     text: {
-        shadow: 2px 2px 5px black;
-        decoration: {
-            line: underline;
-            style: wavy;
-        }
+      shadow: 2px 2px 5px black;
+      decoration: {
+        line: underline;
+        style: wavy;
+      }
     }
   }
   button {
+    @include border-radius(4px);
+    @include font(20px, arial, 900);
     margin-left: $gap;
     &:hover {
-      background-color: $colorBG;
+      @extend %hover;
     }
   }
 }
