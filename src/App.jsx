@@ -1,42 +1,23 @@
-import Wrapper from "./components/Wrapper/Wrapper";
-import Timer from "./components/Timer/Timer";
-import DropDownMenu from "./components/DropDownMenu/DropDownMenu";
-import ToolTip from "./components/ToolTip/ToolTip";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
+import NotFoundPage from "./pages/NotFound/NotFoundPage";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
-    <>
-      <Wrapper>
-        <ToolTip textToolTip="Click START for start timer">
-          <h2>Timer!</h2>
-        </ToolTip>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
 
-        <Timer />
-      </Wrapper>
-      <Wrapper>
-        <ToolTip textToolTip="click button and select">
-          <h2>Dropdown menu</h2>
-        </ToolTip>
-
-        <DropDownMenu text="hi, user" widthList={200}>
-          <p>Lorem, ipsum dolor.</p>
-          <p>Ducimus, sed ab.</p>
-          <p>Itaque, sapiente facilis?</p>
-        </DropDownMenu>
-        <DropDownMenu text="type" widthList={200}>
-          <p>Lorem, ipsum dolor.</p>
-          <p>Ducimus, sed ab.</p>
-          <p>Itaque, sapiente facilis?</p>
-        </DropDownMenu>
-      </Wrapper>
-      <Wrapper>
-        <h2>Hello</h2>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima et
-          tenetur ducimus quo quaerat, id repellat corporis a? A, ipsam!
-        </p>
-      </Wrapper>
-    </>
+        {/* Not Founs always last */}
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
