@@ -1,25 +1,34 @@
-import MouseTracker from "./../components/MouseTracker/MouseTracker";
+import Slider from "./../components/Slider/Slider";
 
 const AboutPage = () => {
   return (
     <section>
       <h1>About Page</h1>
-      <MouseTracker
-        render={(position) => (
-          <h3>
-            x={position.x}, y={position.y}
-          </h3>
-        )}
-      />
-      <hr />
-      <MouseTracker
-        render={(position) => (
+      <Slider
+        min={0}
+        max={100}
+        render={(value) => (
           <div
-            style={{ position: "absolute", top: position.y, left: position.x, pointerEvents: 'none'}}
+            style={{
+              height: "56px",
+              position: "releative",
+              backgroundColor: "pink",
+            }}
           >
-            X
+            <div
+              style={{
+                height: "100%",
+                backgroundColor: "red",
+                width: `${value}%`,
+              }}
+            ></div>
           </div>
         )}
+      />
+      <Slider
+        min={100}
+        max={1000}
+        render={(value) => <p>curent value {value}</p>}
       />
     </section>
   );
