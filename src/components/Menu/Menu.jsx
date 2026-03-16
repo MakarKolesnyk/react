@@ -14,6 +14,9 @@ const Menu = () => {
         <li>
           <NavLink to="/contact">Contact</NavLink>
         </li>
+        <li>
+          <NavLink to="/sign-in">Login</NavLink>
+        </li>
       </ul>
     </nav>
   );
