@@ -17,6 +17,9 @@ const Menu = () => {
         <li>
           <NavLink to="/sign-in">Login</NavLink>
         </li>
+         <li>
+          <NavLink to="/register">Register</NavLink>
+        </li>
       </ul>
     </nav>
   );

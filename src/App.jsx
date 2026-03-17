@@ -5,6 +5,7 @@ import ContactPage from "./pages/ContactPage";
 import NotFoundPage from "./pages/NotFound/NotFoundPage";
 import Header from "./components/Header/Header";
 import LoginPage from "./pages/LoginPage";
+import RegisterPage from './pages/RegisterPage';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/sign-in" element={<LoginPage />} />
-
+        <Route path="/register" element={<RegisterPage/>}/>
         {/* Not Founs always last */}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
