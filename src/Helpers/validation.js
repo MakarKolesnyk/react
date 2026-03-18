@@ -21,9 +21,13 @@ export const registerSchema = Yup.object({
   email: emailSchema,
   password: passwordSchema,
   confirmPassword: Yup.string()
-    .oneOf([Yup.ref("password")], 'passwords must match')
+    .oneOf([Yup.ref("password")], "passwords must match")
     .required(),
   year: Yup.number()
     .min(1900)
     .max(new Date().getFullYear(), "year cannot not be in the future"),
+});
+
+export const taskSchema = Yup.object({
+  text: Yup.string().trim().min(3).max(255).required(),
 });
